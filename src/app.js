@@ -19,22 +19,19 @@ hbs.registerPartials(partialsPath);
 
 app.get('', (req,res) => {
     res.render('index', {
-        title: 'Vremea Exacta',
-        name: 'Edu'
+        title: 'Live Weather'
     });
 })
 
 app.get('/about', (req,res) => {
     res.render('about', {
-        title: 'Despre',
-        name: 'Joni Beton'
+        title: 'About'
     });
 })
 
 app.get('/help', (req,res) => {
     res.render('help', {
-        title: 'Pagina ajutor',
-        name: 'Joni Asfalt'
+        title: 'Help page'
     });
 })
 
