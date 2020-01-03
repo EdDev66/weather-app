@@ -1,7 +1,7 @@
 const request = require('request');
 
 const forecast = (lat, long, callback) => {
-    const url = 'https://api.darksky.net/forecast/59ddb5c6472cdae0fd43ceb52fb2c1ae/' + lat + ',' + long + '?units=si&lang=ro'
+    const url = 'https://api.darksky.net/forecast/59ddb5c6472cdae0fd43ceb52fb2c1ae/' + lat + ',' + long + '?units=si'
 
     request({ url, json:true}, (error,{ body }) => {
 
@@ -10,7 +10,7 @@ const forecast = (lat, long, callback) => {
         } else if (body.error) {
             callback('Location not found', undefined);
         } else {
-            callback(undefined,body.currently.temperature + ' ºC');
+            callback(undefined,body.currently.temperature + ' ºC ' + body.currently.summary);
         }
     })
 
