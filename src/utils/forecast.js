@@ -10,7 +10,7 @@ const forecast = (lat, long, callback) => {
         } else if (body.error) {
             callback('Location not found', undefined);
         } else {
-            callback(undefined,body.currently.temperature + ' De grade afara');
+            callback(undefined,body.currently.temperature + ' ºC');
         }
     })
 
